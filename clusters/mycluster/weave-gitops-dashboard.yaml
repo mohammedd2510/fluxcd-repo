@@ -38,4 +38,11 @@ spec:
       create: true
       passwordHash: $2a$10$RwG/S9WbNz4kbivh5f3MYuX8Y1S4kr.P2lO3CuQXnmTJtFicjFWO6
       username: admin
-
+    ingress:
+      enabled: true
+      className: traefik
+      hosts:
+        - host: gitops.example.com
+          paths:
+            - path: /
+              pathType: Prefix
