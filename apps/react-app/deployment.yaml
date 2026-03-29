@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: route-demo
+  namespace: default
+  labels:
+    app: route-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: route-demo
+  template:
+    metadata:
+      labels:
+        app: route-demo
+    spec:
+      containers:
+        - name: route-demo
+          image: ghcr.io/mohammedd2510/react-app-cicd:5ccaf6e6cf9549ae37b7ec35d18299d87ba36020
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 256Mi
