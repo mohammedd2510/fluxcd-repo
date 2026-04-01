@@ -4,11 +4,10 @@ metadata:
   name: nginx-ec2
   namespace: flux-system
 spec:
-  destroy: true
   interval: 5m
   retryInterval: 1m
   approvePlan: auto
-  destroy: false
+  destroy: true
   path: ./infrastructure/nginx-ec2
   sourceRef:
     kind: GitRepository
