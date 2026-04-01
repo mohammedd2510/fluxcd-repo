@@ -4,6 +4,7 @@ metadata:
   name: nginx-ec2
   namespace: flux-system
 spec:
+  storeReadablePlan: human
   interval: 5m
   retryInterval: 1m
   approvePlan: auto
